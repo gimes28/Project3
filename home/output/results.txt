@@ -1,0 +1,6 @@
+Files in home/data are : 
+IF.txt
+Limerick-1.txt
+Total number of words: 1648
+3 most frequent words from IF: [('and', 16), ('if', 14), ('you', 14)]
+172.17.0.2

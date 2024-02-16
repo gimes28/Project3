@@ -1,0 +1,19 @@
+#FROM alpine
+FROM python:3.7-slim
+
+LABEL maintainer="Gabe Imes <dev@gabeimes.me>"
+
+RUN mkdir /home/data
+RUN mkdir /home/output
+RUN touch /home/output/results.txt
+
+WORKDIR /home
+
+COPY main.py ./
+COPY run.sh ./
+#COPY IF.txt ./data
+#COPY Limerick-1.txt ./data
+RUN /bin/bash -c "/home/run.sh"
+#CMD ["python", "main.py"]
+#ENTRYPOINT ["/bin/sh", "-c", "cat ../home/output/results.txt; python main.py &; exec $@"]
+CMD ["/bin/sh", "-c", "python main.py && cat /home/output/results.txt"]
